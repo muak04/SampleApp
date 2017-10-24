@@ -21,7 +21,6 @@ from crowdboticsApp.app_views.user_views import LoginView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', animals_list, name="index"),
     url(r'^index/', animals_list, name="index"),
     url(r'^login/$', LoginView.as_view(), name="login"),
 
@@ -30,5 +29,6 @@ urlpatterns = [
 
     url(r'cat/add/$', CatCreate.as_view(), name='cat-add'),
     url(r'cat/(?P<pk>[0-9]+)/$', CatUpdate.as_view(), name='cat-update'),
+    url(r'^$', animals_list, name="home"),
 
 ]
